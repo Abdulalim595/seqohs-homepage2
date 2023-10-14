@@ -1,0 +1,1165 @@
+/*===================== REUSABLE  CSS AREA START =====================*/
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Ivy Style TW';
+}
+
+p,a {
+  font-family: 'Barlow', sans-serif;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+main {
+  overflow: hidden !important;
+}
+
+.container,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+/*===================== REUSABLE CSS AREA END =====================*/
+
+/*===================== OFFCANVAS CSS AREA START =====================*/
+.menu-close {
+  font-size: 18px;
+  color: #fff;
+  position: absolute;
+  top: 20px;
+  right: 18px;
+  cursor: pointer;
+  transition: 0.4s;
+  border: 1px solid #fff;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-close:hover {
+  color: #000;
+  background: #fff;
+}
+
+.offcanvas-area {
+  position: fixed;
+  left: -100%;
+  height: 100%;
+  width: 318px;
+  background: #1C3A6B;
+  z-index: 9999;
+  padding-top: 35px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  visibility: hidden;
+  top: 0;
+  overflow-y: scroll;
+}
+
+.offcanvas-area.active {
+  left: 0;
+  visibility: visible;
+}
+
+.offcanvas-area .main-menu ul li a {
+  font-size: 18px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+  padding: 16px 22px;
+  border-bottom: 1px solid #fff;
+  text-decoration: none;
+}
+.offcanvas-area .main-menu ul li a:hover {
+  color: #000 !important;
+  background: #fff;
+}
+.offcanvas-area .main-menu ul li:first-child a {
+  border-top: 1px solid #fff;
+}
+
+.offcanvas-area .main-menu ul li a:hover,
+.offcanvas-area .main-menu ul li a[aria-expanded="true"] {
+  color: #d5d5d5;
+}
+
+.offcanvas-menu .main-menu ul {
+  display: block;
+  padding-left: 0;
+  margin-bottom: 35px;
+  list-style: none;
+}
+
+.offcanvas-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  z-index: 99;
+}
+
+.offcanvas-overlay.active {
+  opacity: 0.4;
+  visibility: visible;
+}
+
+.offcanvas-area {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.offcanvas-area::-webkit-scrollbar {
+  display: none;
+}
+.offcanvas-menu {
+  margin-top: 100px;
+}
+
+/*===================== OFFCANVAS CSS AREA END =====================*/
+
+/*===================== HEADER CSS AREA START =====================*/
+.input-box {
+  position: relative;
+  width: 100%;
+  max-width: 24px;
+  background-color: #fff;
+  border-radius: 6px;
+  transition: all 0.5s ease-in-out;
+}
+.input-box.open {
+  max-width: 350px;
+}
+.input-box input {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  transition: all 0.5s ease-in-out;
+}
+.input-box.open input {
+  padding: 0 15px 0 65px;
+}
+
+.input-box .search {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.input-box.open .search {
+  border-radius: 6px 0 0 6px;
+}
+.search .search-icon {
+  font-size: 30px;
+  color: #1c1c1c;
+}
+.input-box .close-icon {
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  font-size: 20px;
+  color: #1c1c1c;
+  padding: 5px;
+  transform: translateY(-50%);
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  pointer-events: none;
+  opacity: 0;
+}
+.input-box.open .close-icon {
+  transform: translateY(-50%) rotate(180deg);
+  pointer-events: auto;
+  opacity: 1;
+}
+
+
+
+
+.header__nav > a img {
+  width: 22px;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 90px;
+}
+
+.header__nav.header__nav2 {
+  gap: 30px;
+}
+
+.header__nav > ul {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+
+.input-box:after {
+  content: '';
+  position: absolute;
+  right: -51px;
+  top: 0px;
+  width: 1px;
+  height: 39px;
+  background: #DCDCDC;
+}
+
+.header__nav1 > ul > li > ul {
+  position: absolute;
+  top: 25px;
+  left: 0px;
+  background: #44C4A6;
+  width: 100%;
+  padding: 55px 0px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.header__nav > ul > li:hover > ul {
+  top: 35px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.container > ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container > ul > li > a {
+  font-weight: 700;
+  color: #fff;
+}
+
+.header__nav > ul > li > a {
+  font-weight: 500;
+  color: #003770;
+}
+/* .header__nav > ul > li {
+  transition: .5s ease-in-out;
+}
+.header__nav > ul > .nav__list a:after {
+  content: '';
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: rotate(45deg) translateX(-50%);
+  width: 18px;
+  height: 18px;
+  background: #44C4A6;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.header__nav > ul > .nav__list:hover a:after {
+  opacity: 1;
+  visibility: visible;
+} */
+
+li.nav__list1:hover .sub:after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: 671px;
+  width: 18px;
+  height: 18px;
+  background: #44C4A6;
+  transform: rotate(45deg);
+  z-index: 9;
+}
+
+li.nav__list2:hover .sub:after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: 671px;
+  width: 18px;
+  height: 18px;
+  background: #44C4A6;
+  transform: rotate(45deg);
+  z-index: 9;
+}
+
+li.nav__list3:hover .sub:after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: 671px;
+  width: 18px;
+  height: 18px;
+  background: #44C4A6;
+  transform: rotate(45deg);
+  z-index: 9;
+}
+
+li.nav__list4:hover .sub:after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: 671px;
+  width: 18px;
+  height: 18px;
+  background: #44C4A6;
+  transform: rotate(45deg);
+  z-index: 9;
+}
+#header__area {
+  padding: 14px 0px 28px;
+}
+
+.header__wrap1 {
+  border-bottom: 1px solid #DCDCDC;
+  padding-bottom: 14px;
+  position: relative;
+}
+
+.header__logo__login > a img {
+  width: 270px;
+}
+
+.header__wrap2 {
+  padding-top: 25px;
+}
+
+.header__logo__login {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.header__logo__login > .header__nav > ul > li > a {
+  width: 140px;
+  height: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  background: #0390CE;
+  color: #fff;
+  font-weight: 800;
+}
+
+.header__logo__login > .header__nav > ul {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.header__logo__login > .header__nav > a {
+  width: 100px;
+  height: 39px;
+  border-radius: 30px;
+  background: #1C3A6B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 800;
+}
+
+.header__bar a {
+  color: #1C3A6B;
+  font-size: 24px;
+}
+/*===================== HEADER CSS AREA END =====================*/
+
+/*===================== HERO CSS AREA START =====================*/
+.hero__single__slide {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  padding: 494px 0px 115px;
+}
+.hero__single__slide1 {
+  background-image: url('../img/hero_bg1.png');
+}
+
+.hero__single__slide2 {
+  background-image: url('../img/hero_bg2.png');
+}
+
+.hero__single__slide3 {
+  background-image: url('../img/hero_bg3.png');
+}
+
+.hero__single__slide4 {
+  background-image: url('../img/hero_bg4.png');
+}
+
+.hero__single__slide5 {
+  background-image: url('../img/hero_bg5.png');
+}
+
+.hero__single__slide6 {
+  background-image: url('../img/hero_bg6.png');
+}
+
+.hero__single__slide7 {
+  background-image: url('../img/hero_bg7.png');
+}
+
+.hero__single__slide8 {
+  background-image: url('../img/hero_bg8.png');
+}
+
+.hero__slide__content h1 {
+  color: #fff;
+  font-size: 80px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 85px;
+}
+
+.hero__slider .owl-dots {
+  display: none;
+}
+
+.hero__slider .owl-nav button.owl-prev,.hero__slider .owl-nav button.owl-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 43px;
+}
+
+.hero__slider {
+  position: relative;
+}
+
+.hero__slider .owl-nav button.owl-prev {
+  left: 43px;
+}
+
+.hero__slider .owl-nav button.owl-next {
+  right: 43px;
+}
+
+.hero__slider .owl-nav [class*=owl-]:hover {
+  background: transparent;
+}
+
+/*===================== HERO CSS AREA END =====================*/
+
+/*===================== INFORMATION CSS AREA START =====================*/
+.information__single__card {
+  padding: 24px 41px;
+}
+
+.information__single__card h5 {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 45px;
+  margin-bottom: 35px;
+  max-width: 268px;
+}
+
+.information__single__card a {
+  color: #000;
+  background: #fff;
+  font-weight: 800;
+  width: 100px;
+  height: 41px;
+  border-radius: 30px;
+}
+
+section#information__area {
+  padding-bottom: 114px;
+  background: #DBF5FF;
+  margin-top: -13px;
+}
+
+.information__submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #DBF5FF;
+  padding: 22px 15px 0px;
+  margin-bottom: 80px;
+  margin-top: -65px;
+  position: relative;
+  z-index: 1;
+}
+
+.information__submit h4 {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 45px;
+  margin-bottom: 36px;
+  color: #1C3A6B;
+  text-align: center;
+}
+
+ul.dropdown-menu {
+  width: 100% !important;
+}
+
+.information__selector {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  width: 100%;
+  gap: 30px;
+  margin-bottom: 38px;
+}
+
+.information__selector .dropdown {
+  width: 100% !important;
+}
+
+.information__selector .dropdown button {
+  width: 100%;
+  text-align: left;
+  padding: 19px 20px;
+  background: #fff;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  color: #72808A;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.information__selector .dropdown button img {
+  width: 19px;
+}
+
+.information__selector .dropdown button.show img {
+  transform: rotate(180deg);
+}
+
+.dropdown__btn button {
+  width: 112px;
+  height: 41px;
+  border-radius: 30px;
+  background: #0390CE;
+  color: #fff;
+  font-weight: 800;
+}
+
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+  background: #fff !important;
+  border-color: #fff !important;
+}
+
+ul.dropdown-menu {
+  width: 100% !important;
+  border: none;
+  border-radius: 0px;
+  margin-top: -10px !important;
+  padding-bottom: 31px;
+}
+
+
+ul.dropdown-menu li a input {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #707070;
+}
+
+ul.dropdown-menu li a {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+ul.dropdown-menu li a {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 5px 20px;
+}
+
+ul.dropdown-menu li a label {
+  font-size: 18px;
+  font-weight: 500;
+  color: #1C3A6B;
+}
+
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+.dropdown__btn {
+  position: relative;
+  
+}
+.dropdown__btn button {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) !important;
+  z-index: -1;
+}
+/*===================== INFORMATION CSS AREA END =====================*/
+
+/*===================== OCCUPATIONAL CSS AREA END =====================*/
+#accupation__area {
+  background-image: url('../img/check_bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  padding: 115px 0px 148px;
+  margin-bottom: 115px;
+}
+
+.occupation__wrap {
+  max-width: 445px;
+  display: flex;
+  flex-direction: column;
+  gap: 41px;
+}
+
+.occupation__wrap h2 {
+  font-size: 45px;
+  font-weight: 600;
+  line-height: 50px;
+}
+
+.occupation__wrap input {
+  display: block;
+  height: 66px;
+  padding: 19px 20px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #72808A;
+}
+
+.occupation__wrap button {
+  width: 112px;
+  height: 41px;
+  border-radius: 30px;
+  background: #1C3A6B;
+  color: #fff;
+  font-weight: 800;
+}
+/*===================== OCCUPATIONAL CSS AREA END =====================*/
+
+/*===================== QUALITY CSS AREA START =====================*/
+section#quality__area {
+  position: relative;
+  margin-bottom: 115px;
+}
+
+section#quality__area > img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 45%;
+  height: 100%;
+}
+
+.quality__content h2 {
+  font-size: 55px;
+  font-weight: 600;
+  line-height: 60px;
+  color: #E4A9BB;
+  margin-bottom: 38px;
+}
+
+.quality__content h2 span {
+  display: block;
+}
+
+.quality__content p {font-size: 18px;line-height: 24px;color: #020E22;}
+
+.quality__content p:nth-child(2) {
+  margin-bottom: 20px;
+}
+
+.quality__content h6 {
+  margin: 46px 0px 38px;
+}
+
+.quality__content a {
+  background: #E4A9BB;
+  max-width: 241px;
+  height: 41px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 800;
+}
+/*===================== QUALITY CSS AREA END =====================*/
+
+/*===================== SEQOHS CSS AREA START =====================*/
+section#seqohs__area {
+  position: relative;
+  margin-bottom: 115px;
+}
+
+.seqohs__title h2 {
+  color: #0390CE;
+  margin-bottom: 39px;
+  font-size: 55px;
+  font-weight: 600;
+}
+
+.seqohs__content {
+  max-width: 491px;
+}
+
+.seqohs__content p:nth-child(1) {
+  font-size: 26px;
+  font-style: italic;
+  line-height: 30px;
+  margin-bottom: 17px;
+}
+
+.seqohs__content p {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.seqohs__card {
+  display: flex;
+  justify-content: end;
+  gap: 30px;
+}
+
+.seqohs__single__card1 {
+  background: #1C3A6B;
+}
+
+.seqohs__single__card2 {
+  background: #0390CE;
+}
+
+.seqohs__single__card {
+  max-width: 270px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px 43px 40px;
+}
+
+.seqohs__single__card h2 {
+  font-size: 100px;
+  font-weight: 700;
+}
+
+.seqohs__single__card span {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-bottom: 18px;
+}
+
+.seqohs__single__card a {
+  width: 100px;
+  height: 41px;
+  border-radius: 30px;
+  color: #fff;
+  font-weight: 800;
+}
+
+.seqohs__single__card1 h2 {
+  color: #0390CE;
+}
+
+.seqohs__single__card1 a {
+  background: #0390CE;
+}
+
+.seqohs__single__card2 a {
+  background: #1C3A6B;
+}
+
+.seqohs__single__card2 h2 {
+  color: #1C3A6B;
+}
+/*===================== SEQOHS CSS AREA END =====================*/
+
+/*===================== FOM CSS AREA START =====================*/
+#fom__area {
+  background-image: url('../img/fom_bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  padding: 165px 0px 120px; 
+}
+
+.fom__content img {
+  width: 171px;
+}
+
+.fom__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.fom__content p {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 30px 0px 36px;
+}
+
+.fom__content a {
+  width: 228px;
+  height: 41px;
+  background: #1C3A6B;
+  border-radius: 30px;
+  color: #fff;
+  font-weight: 800;
+}
+/*===================== FOM CSS AREA END =====================*/
+
+/*===================== ABOUT CSS AREA START =====================*/
+section#about__area {
+  background: #DBF5FF;
+  padding: 30px 0px 115px;
+}
+
+.seqohs__single__card.seqohs__single__card3 {
+  background: #44C4A6;
+}
+
+.seqohs__single__card h4 {
+  font-size: 32px;
+  color: #fff;
+  margin-bottom: 9px;
+}
+
+.seqohs__single__card.seqohs__single__card3 a {
+  background: #fff;
+  color: #1C3A6B;
+}
+
+.seqohs__single__card.seqohs__single__card4 {
+  background: #E4A9BB;
+}
+
+.seqohs__single__card.seqohs__single__card4 h4 {color: #833177;}
+
+.about__cards > .seqohs__single__card h2 {
+  font-size: 80px;
+}
+
+.about__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.seqohs__single__card.seqohs__single__card4 a {
+  background: #fff;
+  color: #1C3A6B;
+}
+
+.about__cards > .seqohs__single__card h2 {
+  font-size: 80px;
+}
+
+.about__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+section#about__area {
+  background: #DBF5FF;
+  padding: 30px 0px 115px;
+}
+
+.about__content {
+  background: #fff;
+  padding: 21px 25px;
+  height: 100%;
+}
+
+.about__content h4 {
+  background: #4679B2;
+  color: #fff;
+  padding: 9px;
+  margin-bottom: 35px;
+}
+
+.about__content h6 {
+  color: #1C3A6B;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.about__content p {
+  font-size: 15px;
+  padding-right: 0px;
+}
+
+.about__content p:nth-child(3) {
+  margin-bottom: 10px;
+}
+
+.about__content p:nth-child(4) {
+  margin-bottom: 25px;
+}
+
+.about__content p:nth-child(5),.about__content p:nth-child(6) {
+  margin-bottom: 10px;
+}
+
+.about__content p:nth-child(7) {
+  margin-bottom: 35px;
+}
+
+.about__content p:nth-child(9) {
+  margin-bottom: 12px;
+}
+
+.about__content p a {
+  text-decoration: underline;
+  color: #0390CE;
+}
+
+/*===================== ABOUT CSS AREA END =====================*/
+.contact__content__form {
+  background: #fff;
+  padding: 21px 25px;
+  height: 100%;
+}
+
+.contact__content__form h4 {
+  background: #4679B2;
+  color: #fff;
+  padding: 9px;
+  margin-bottom: 0px;
+}
+
+.contact__all__content > .about__content {
+  padding: 0px !important;
+}
+
+.contact__all__content {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 30px;
+  margin-top: 10px;
+}
+
+.contact__content p {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.contact__content p:nth-child(1) {
+  margin-bottom: 10px;
+}
+
+.contact__content p a {
+  color: #0390CE;
+}
+
+.contact__content h6 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.contact__content {
+  color: #1C3A6B;
+}
+
+.contact__content p:nth-child(6), .contact__content p:nth-child(7), .contact__content p:nth-child(8), .contact__content p:nth-child(9), .contact__content p:nth-child(10), .contact__content p:nth-child(11), .contact__content p:nth-child(12), .contact__content p:nth-child(14),.contact__content p:nth-child(18),.contact__content p:nth-child(19),.contact__content p:nth-child(20) {
+  margin-bottom: 8px;
+}
+
+.input_label {
+  display: flex;
+  flex-direction: column;
+}
+
+.input_label input {
+  border: 2px solid #d8d8d8;
+  max-width: 200px;
+  padding: 2px 8px;
+}
+
+.input_img {
+  position: relative;
+  max-width: 200px;
+}
+
+.input_img img {
+  position: absolute;
+  top: 4px;
+  right: 5px;
+  width: 25px;
+}
+
+.contact__form > form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input_label label {
+  font-weight: 500;
+  color: #1C3A6B;
+}
+
+select.form-select {
+  max-width: 188px;
+  background-color: #dadcdd;
+  border: 2px solid #d8d8d8;
+}
+
+.input_label textarea {
+  width: 260px;
+  height: 120px;
+  border: 2px solid #d8d8d8;
+  padding: 8px;
+}
+
+.contact__form > form > img {
+  max-width: 315px;
+}
+
+.contact__form > form > button {
+  width: 60px;
+  height: 35px;
+  border-radius: 5px;
+  background: #74B666;
+  color: #fff;
+  font-weight: 500;
+}
+
+.contact__form p {
+  color: #1C3A6B;
+  margin-bottom: 10px;
+}
+/*===================== FOOTER CSS AREA START =====================*/
+footer#footer__area {
+  background: #2C3441;
+  padding: 138px 0px;
+}
+
+.footer__content h6 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.footer__content > ul li a {
+  color: #fff;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.footer__content > ul {
+  margin-bottom: 38px;
+}
+
+.footer__content > a {
+  display: block;
+  font-size: 26px;
+  color: #E4A9BB;
+}
+
+.footer__contact__logo a img {
+  width: 119px;
+}
+
+.footer__content.footer__copyright {
+  margin-top: 40px;
+}
+
+.copyright {
+  color: #fff;
+  margin-top: 82px;
+}
+
+.copyright span {
+  font-size: 15px;
+  line-height: 28px;
+}
+/*===================== FOOTER CSS AREA END =====================*/
